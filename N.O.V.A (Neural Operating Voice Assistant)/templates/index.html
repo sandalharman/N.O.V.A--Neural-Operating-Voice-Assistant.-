@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NOVA Jarvis Assistant</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="scanline"></div>
+
+  <main class="app-shell">
+    <section class="left-console">
+      <div class="brand">
+        <div class="mini-core"></div>
+        <div>
+          <h1>NOVA</h1>
+          <p>Neural Operating Voice Assistant</p>
+        </div>
+      </div>
+
+      <div class="orb">
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+        <div class="core">
+          <span>NOVA</span>
+          <small id="orbStatus">ONLINE</small>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div><span>Status</span><b id="status">online</b></div>
+        <div><span>Wake</span><b>2x Clap</b></div>
+        <div><span>Brain</span><b>Ollama</b></div>
+      </div>
+    </section>
+
+    <section class="right-console">
+      <div class="topbar">
+        <div>
+          <h2>Command Interface</h2>
+          <p>Ask questions or control your laptop with safe commands.</p>
+        </div>
+        <button class="ghost" onclick="clearChat()">Clear</button>
+      </div>
+
+      <div id="chatWindow" class="chat-window"></div>
+
+      <div class="composer">
+        <button class="mic" onclick="listen()">🎤</button>
+        <textarea id="cmd" rows="1" placeholder="Ask NOVA anything..."></textarea>
+        <button class="send" onclick="sendCommand()">Send</button>
+      </div>
+
+      <div class="chips">
+        <button onclick="quick('what can you do')">What can you do?</button>
+        <button onclick="quick('system status')">System status</button>
+        <button onclick="quick('open youtube')">Open YouTube</button>
+        <button onclick="quick('take screenshot')">Screenshot</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
